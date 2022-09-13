@@ -82,29 +82,16 @@ public class ArrayTasks {
      * arr = ["Bob", "Nick"]               -> ["Nick", "Bob"]
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
-    public String[] reverseArray(String[] arr) {
-        int lastIndex = arr.length -1;
-        String arrEl = "";
-        if(arr.length % 2 == 0){
-            for(int i = 0; i <= arr.length/2; i ++){
-                arrEl = arr[i];
-                arr[i]= arr[lastIndex];
-                arr[lastIndex] = arrEl;
-                lastIndex--;
-            }
-        }else{
-            for(int i = 0; i < arr.length + 1; i++){
-                if(i == arr.length +1){
-                    continue;
-                }else{
-                    arrEl = arr[i];
-                    arr[i]= arr[lastIndex];
-                    arr[lastIndex] = arrEl;
-                    lastIndex--;
-                }
+    public String[] reverseArray(String[] arr ) {
+        String[] result = new String[arr.length];
+        int startIndex = 0 ;
+        for(int i = arr.length-1;i>=0;i--){
+            if(startIndex <= arr.length -1){
+                result[startIndex] = arr[i];
+                startIndex++;
             }
         }
-        return arr;
+        return result;
     }
 
     /**
